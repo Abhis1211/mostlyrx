@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>335115536141-8po62ksgsd271ra6b6fhf2jl1ad5rmms.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335115536141-8po62ksgsd271ra6b6fhf2jl1ad5rmms</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>335115536141-1j9ks31euu89t7r42o5k2quvj5vmoku0.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCJ3VeDBMaKjQWt-if9J9lbTEXVW6_jR94</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335115536141</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gloobe.mostlyrx.app</string>
+	<key>PROJECT_ID</key>
+	<string>mostly-rx-280602</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mostly-rx-280602.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335115536141:ios:f6633e6d7da07c5d9b5244</string>
+</dict>
+</plist>
