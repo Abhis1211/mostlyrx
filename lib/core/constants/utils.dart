@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +15,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:soundpool/soundpool.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'dart:io';
 
 class Utils {
   static Size? dimensions;
@@ -125,7 +125,7 @@ class Utils {
       print("here it is 1");
       return pool.load(soundData);
     });
-//    await pool.play(soundId);
+    await pool.play(soundId);
   }
 
   static String getMyDate(String date) {

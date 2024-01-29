@@ -17,7 +17,6 @@ import 'package:mostlyrx/core/apimodels/order_response.dart';
 import 'package:mostlyrx/core/apimodels/single_order_response.dart';
 import 'package:mostlyrx/core/constants/app_contstants.dart';
 import 'package:mostlyrx/core/constants/utils.dart';
-
 import 'package:mostlyrx/core/models/notifications_model.dart';
 import 'package:mostlyrx/core/models/user.dart';
 import 'package:mostlyrx/core/services/api.dart';
@@ -33,18 +32,18 @@ Future<void> saveOrderFromNotification(
     Map<String, dynamic>? data, bool fromClick) async {
   log('$data');
 
-  AssetsAudioPlayer.newPlayer().open(
-    Audio('assets/raw/notification.mp3'),
-    autoStart: true,
-    showNotification: true,
-  );
-  AssetsAudioPlayer.newPlayer().play();
+  // AssetsAudioPlayer.newPlayer().open(
+  //   Audio('assets/raw/alert.wav'),
+  //   autoStart: true,
+  //   showNotification: false,
+  // );
+  // AssetsAudioPlayer.newPlayer().play();
   // Soundpool pool = Soundpool.fromOptions(
   //     options: const SoundpoolOptions(
   //         streamType: StreamType.notification,
   //         androidOptions: SoundpoolOptionsAndroid.kDefault));
   // int soundId = await rootBundle
-  //     .load('assets/raw/notification.mp3')
+  //     .load('assets/raw/alert.wav')
   //     .then((ByteData soundData) {
   //   return pool.load(soundData);
   // });
@@ -258,6 +257,7 @@ class AuthenticationService {
     log('===setup OneSignal===');
     var deviceState = (await OneSignal.shared.getDeviceState())!;
     OneSignal.shared.disablePush(false);
+    log(deviceState.userId ?? 'token----> ');
     unawaited(updateToken(
         Constants.loggedInUser?.id.toString() ?? '', deviceState.userId ?? ''));
     if (!deviceState.subscribed && Platform.isIOS) {
