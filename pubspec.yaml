@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-version: 2.0.8+28
+version: 2.0.9+28
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -38,7 +38,7 @@ dependencies:
   url_launcher: ^6.1.5
   uuid: ^3.0.6
   firebase_messaging: ^14.3.0
-  syncfusion_flutter_charts: 21.2.8
+  # syncfusion_flutter_charts: ^24.1.47+2
   collection: 
   cached_network_image: ^3.2.3
   flutter_svg: 

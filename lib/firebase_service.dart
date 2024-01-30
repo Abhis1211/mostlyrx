@@ -1,10 +1,6 @@
-import 'dart:convert';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
-import 'globals.dart';
 
 class FirebaseService {
   final AndroidNotificationChannel channel = const AndroidNotificationChannel(
@@ -14,8 +10,8 @@ class FirebaseService {
           'This channel is used for important notifications.', // description
       importance: Importance.max,
       enableVibration: false,
-      sound: RawResourceAndroidNotificationSound('notification'),
-      playSound: false);
+      sound: RawResourceAndroidNotificationSound('alert'),
+      playSound: true);
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
@@ -52,7 +48,7 @@ class FirebaseService {
     print("noti shown");
     flutterLocalNotificationsPlugin.show(
       0,
-      message.data["alert"],
+      message.data["notification"],
       "",
       NotificationDetails(
         android: AndroidNotificationDetails(

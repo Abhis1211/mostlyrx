@@ -1,38 +1,35 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mostlyrx/core/constants/app_contstants.dart';
 import 'package:mostlyrx/core/routes.dart';
 import 'package:mostlyrx/firebase_service.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:soundpool/soundpool.dart';
+
 import 'provider_setup.dart';
-import 'globals.dart' as globals;
 
 Future<void> backgroundMessageHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  AssetsAudioPlayer.newPlayer().open(
-    Audio('assets/raw/notification.mp3'),
-    autoStart: true,
-    showNotification: true,
-  );
-  AssetsAudioPlayer.newPlayer().play();
+  // AssetsAudioPlayer.newPlayer().open(
+  //   Audio('assets/raw/alert.wav'),
+  //   autoStart: true,
+  //   showNotification: false,
+  // );
+  // AssetsAudioPlayer.newPlayer().play();
   // Soundpool pool = Soundpool.fromOptions(
   //     options: const SoundpoolOptions(streamType: StreamType.notification));
   // int soundId = await rootBundle
-  //     .load('assets/raw/notification.mp3')                                                                                                    \]]]]]]]]]]]
+  //     .load('assets/raw/alert.wav')                                                                                                    \]]]]]]]]]]]
   //     .then((ByteData soundData) {
   //   return pool.load(soundData);
   // });
   print("here it is:${message.data}");
 //  await pool.play(soundId);
-/*
+
   OneSignal.shared.clearOneSignalNotifications();
-  firebaseService.showNotifications(message);
-*/
+  FirebaseService().showNotifications(message);
 }
 
 void main() async {
