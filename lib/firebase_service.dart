@@ -14,7 +14,7 @@ class FirebaseService {
           'This channel is used for important notifications.', // description
       importance: Importance.max,
       enableVibration: false,
-      sound: RawResourceAndroidNotificationSound('alert'),
+      sound: RawResourceAndroidNotificationSound('notification'),
       playSound: false);
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
@@ -63,7 +63,7 @@ class FirebaseService {
           priority: Priority.max,
           playSound: false,
           enableVibration: false,
-          sound: RawResourceAndroidNotificationSound('alert'),
+          sound: RawResourceAndroidNotificationSound('notification'),
         ),
         iOS: DarwinNotificationDetails(),
       ),

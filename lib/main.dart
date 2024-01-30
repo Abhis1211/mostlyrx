@@ -40,6 +40,10 @@ void main() async {
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
   await OneSignal.shared.setAppId('39e303ed-4c76-4ec9-950d-276f5d0602da');
+  print('===setup OneSignal===');
+  var deviceState = (await OneSignal.shared.getDeviceState())!;
+  OneSignal.shared.disablePush(false);
+  print(deviceState.userId ?? 'token----> ');
   FirebaseService firebaseService = FirebaseService();
   await firebaseService.initLocalNotifications();
   await firebaseService.initFirebaseMessaging();
